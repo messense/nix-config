@@ -37,9 +37,28 @@
         programs.zsh.enable = true;
 
         environment.systemPackages = [
+          pkgs.bat
+          pkgs.btop
+          pkgs.cmake
+          pkgs.direnv
+          pkgs.gti
+          pkgs.helix
+          pkgs.htop
+          pkgs.hyperfine
+          pkgs.jq
           pkgs.mkalias
           pkgs.nil  # Language server for Nix
+          pkgs.patchelf
+          pkgs.ripgrep
+          pkgs.rustup
+          pkgs.starship
+          pkgs.tokei
+          pkgs.tree
           pkgs.vim
+          pkgs.wget
+          pkgs.zellij
+          pkgs.zoxide
+          pkgs.zstd
         ];
 
         system.activationScripts.applications.text = let
@@ -70,16 +89,12 @@
           brews = [
             "aarch64-unknown-linux-gnu"
             "antidote"
-            "bat"
             "bindgen"
-            "btop"
             "cargo-zigbuild"
             "cbindgen"
             "cffi"
-            "cmake"
             "codespell"
             "crosstool-ng"
-            "direnv"
             "fpp"
             "fzf"
             "gh"
@@ -88,31 +103,16 @@
             "git-spice"
             "gnu-sed"
             "gnupg"
-            "gti"
-            "helix"
-            "htop"
-            "hyperfine"
-            "jq"
             "mas"
             "maturin"
             "nox"
             "openssl@3"
             "pre-commit"
-            "patchelf"
             "pinentry"
             "pkgconf"
-            "ripgrep"
             "ruff"
-            "rustup"
-            "starship"
             "telnet"
-            "tokei"
-            "tree"
             "uv"
-            "wget"
-            "zellij"
-            "zoxide"
-            "zstd"
           ];
           casks = [
             "1password-cli"
