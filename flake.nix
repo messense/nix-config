@@ -38,7 +38,7 @@
 
         environment.systemPackages = [
           pkgs.mkalias
-          pkgs.neofetch
+          pkgs.nil  # Language server for Nix
           pkgs.vim
         ];
 
