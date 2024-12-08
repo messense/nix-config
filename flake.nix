@@ -11,7 +11,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
-    configuration = { pkgs, ... }: {
+    configuration = { pkgs, config, ... }: {
         services.nix-daemon.enable = true;
         # Necessary for using flakes on macOS
         nix.settings.experimental-features = "nix-command flakes";
@@ -27,14 +27,100 @@
 
         # Declare the user that will be running `nix-darwin`.
         users.users.messense = {
-            name = "messense";
-            home = "/Users/messense";
+          name = "messense";
+          home = "/Users/messense";
         };
+
+        # security.pam.enableSudoTouchIdAuth = true;
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true;
 
-        environment.systemPackages = [ ];
+        environment.systemPackages = [
+          pkgs.mkalias
+          pkgs.neofetch
+          pkgs.vim
+        ];
+
+        system.activationScripts.applications.text = let
+          env = pkgs.buildEnv {
+            name = "system-applications";
+            paths = config.environment.systemPackages;
+            pathsToLink = "/Applications";
+          };
+        in
+          pkgs.lib.mkForce ''
+          # Set up applications.
+          echo "Setting up /Applications..." >&2
+          rm -rf /Applications/Nix\ Apps
+          mkdir -p /Applications/Nix\ Apps
+          find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+          while read -r src; do
+            app_name=$(basename "$src")
+            echo "Copying $src" >&2
+            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+          done
+              '';
+
+        homebrew = {
+          enable = true;
+          # onActivation.cleanup = "uninstall";
+
+          taps = [ "messense/macos-cross-toolchains" ];
+          brews = [
+            "aarch64-unknown-linux-gnu"
+            "antidote"
+            "bat"
+            "bindgen"
+            "btop"
+            "cargo-zigbuild"
+            "cbindgen"
+            "cffi"
+            "cmake"
+            "codespell"
+            "crosstool-ng"
+            "direnv"
+            "fpp"
+            "fzf"
+            "gh"
+            "git-delta"
+            "git-open"
+            "git-spice"
+            "gnu-sed"
+            "gnupg"
+            "gti"
+            "helix"
+            "htop"
+            "hyperfine"
+            "jq"
+            "mas"
+            "maturin"
+            "nox"
+            "openssl@3"
+            "pre-commit"
+            "patchelf"
+            "pinentry"
+            "pkgconf"
+            "ripgrep"
+            "ruff"
+            "rustup"
+            "starship"
+            "telnet"
+            "tokei"
+            "tree"
+            "uv"
+            "wget"
+            "zellij"
+            "zoxide"
+            "zstd"
+          ];
+          casks = [
+            "1password-cli"
+            "lm-studio"
+            "rio"
+            "zed"
+          ];
+        };
     };
   in
   {
