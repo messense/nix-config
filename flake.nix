@@ -13,35 +13,34 @@
     };
   };
 
-  outputs = inputs@{
-    self,
-    nix-darwin,
-    nixpkgs,
-    home-manager,
-    ...
-  }:
-  let
-    username = "messense";
-    specialArgs =
-      inputs
-      // {
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      username = "messense";
+      specialArgs = inputs // {
         inherit username;
       };
-  in
-  {
-    darwinConfigurations."mac-mini" = nix-darwin.lib.darwinSystem {
-      inherit specialArgs;
-      modules = [
-        ./hosts/mac-mini
+    in
+    {
+      darwinConfigurations."mac-mini" = nix-darwin.lib.darwinSystem {
+        inherit specialArgs;
+        modules = [
+          ./hosts/mac-mini
 
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./home;
-        }
-      ];
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${username} = import ./home;
+          }
+        ];
+      };
     };
-  };
 }
