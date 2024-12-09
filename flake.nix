@@ -26,8 +26,9 @@
     }:
     let
       username = "messense";
+      useremail = "messense@icloud.com";
       specialArgs = inputs // {
-        inherit username;
+        inherit username useremail;
       };
 
       # Small tool to iterate over each systems

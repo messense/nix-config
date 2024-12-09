@@ -4,6 +4,7 @@
     pkgs.bat
     pkgs.btop
     pkgs.cmake
+    pkgs.delta
     pkgs.direnv
     pkgs.gti
     pkgs.helix
@@ -64,7 +65,6 @@
       "fpp"
       "fzf"
       "gh"
-      "git-delta"
       "git-open"
       "git-spice"
       "gnu-sed"
