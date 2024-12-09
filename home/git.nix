@@ -21,7 +21,6 @@
     userEmail = useremail;
 
     extraConfig = {
-      core.editor = "hx";
       core.excludesFile = "~/.gitignore_global";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
