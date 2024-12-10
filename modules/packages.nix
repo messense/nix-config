@@ -15,6 +15,7 @@
     pkgs.nil # Language server for Nix
     pkgs.nixfmt-rfc-style
     pkgs.patchelf
+    pkgs.pre-commit
     pkgs.ripgrep
     pkgs.rustup
     pkgs.starship
@@ -71,7 +72,6 @@
       "maturin"
       "nox"
       "openssl@3"
-      "pre-commit"
       "pinentry"
       "pkgconf"
       "ruff"
