@@ -7,6 +7,7 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +21,7 @@
       nix-darwin,
       nixpkgs,
       systems,
+      agenix,
       home-manager,
       treefmt-nix,
       ...
@@ -50,6 +52,7 @@
         modules = [
           ./hosts/mac-mini
 
+          agenix.nixosModules.default
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
