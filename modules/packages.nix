@@ -63,7 +63,6 @@
       "codespell"
       "crosstool-ng"
       "fpp"
-      "fzf"
       "gh"
       "git-open"
       "git-spice"
