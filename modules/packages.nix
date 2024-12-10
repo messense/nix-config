@@ -9,6 +9,7 @@
     pkgs.direnv
     pkgs.fpp
     pkgs.git-open
+    pkgs.gnupg
     pkgs.gti
     pkgs.helix
     pkgs.htop
@@ -67,7 +68,6 @@
       "gh"
       "git-spice"
       "gnu-sed"
-      "gnupg"
       "mas"
       "maturin"
       "nox"
