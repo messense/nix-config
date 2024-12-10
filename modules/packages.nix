@@ -8,6 +8,7 @@
     pkgs.delta
     pkgs.direnv
     pkgs.fpp
+    pkgs.git-open
     pkgs.gti
     pkgs.helix
     pkgs.htop
@@ -64,7 +65,6 @@
       "cffi"
       "crosstool-ng"
       "gh"
-      "git-open"
       "git-spice"
       "gnu-sed"
       "gnupg"
