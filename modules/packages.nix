@@ -84,5 +84,14 @@
       "rio"
       "zed"
     ];
+    masApps = {
+      "Apple Remote Desktop" = 409907375;
+      "Apple Developer" = 640199958;
+      Stash = 1596063349;
+      TestFlight = 899247664;
+      WeChat = 836500024;
+      "Windows App" = 1295203466;
+      WhatsApp = 310633997;
+    };
   };
 }
