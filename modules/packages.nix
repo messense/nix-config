@@ -4,6 +4,7 @@
     pkgs.bat
     pkgs.btop
     pkgs.cmake
+    pkgs.codespell
     pkgs.delta
     pkgs.direnv
     pkgs.gti
@@ -60,7 +61,6 @@
       "cargo-zigbuild"
       "cbindgen"
       "cffi"
-      "codespell"
       "crosstool-ng"
       "fpp"
       "gh"
