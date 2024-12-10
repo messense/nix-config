@@ -7,6 +7,7 @@
     pkgs.codespell
     pkgs.delta
     pkgs.direnv
+    pkgs.fpp
     pkgs.gti
     pkgs.helix
     pkgs.htop
@@ -62,7 +63,6 @@
       "cbindgen"
       "cffi"
       "crosstool-ng"
-      "fpp"
       "gh"
       "git-open"
       "git-spice"
