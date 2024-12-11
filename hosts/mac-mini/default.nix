@@ -1,7 +1,4 @@
-{ username, agenix, ... }:
-let
-  system = "aarch64-darwin";
-in
+{ username, ... }:
 {
   imports = [
     ../../modules/system.nix
@@ -9,7 +6,7 @@ in
   ];
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "${system}";
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
   # Declare the user that will be running `nix-darwin`.
   users.users.messense = {
@@ -21,6 +18,4 @@ in
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
-
-  environment.systemPackages = [ agenix.packages.${system}.default ];
 }
