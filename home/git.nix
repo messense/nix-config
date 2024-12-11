@@ -27,10 +27,10 @@
       pull.rebase = true;
     };
 
-    # signing = {
-    #   key = "1961A03283467E2B2FA2BD15BB41A8A2C716CCA9";
-    #   signByDefault = true;
-    # };
+    signing = {
+      key = "1961A03283467E2B2FA2BD15BB41A8A2C716CCA9";
+      signByDefault = true;
+    };
 
     delta = {
       enable = true;
