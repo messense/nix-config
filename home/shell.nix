@@ -16,9 +16,6 @@
     initExtra = ''
       export PATH="$HOME/.local/bin:$HOME/.cargo/bin:/opt/homebrew/bin:$PATH"
 
-      # For Git GPG signing
-      export GPG_TTY=$(tty)
-
       # Windsurf
       export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
