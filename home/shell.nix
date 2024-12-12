@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, _1password-shell-plugins, ... }:
 {
+  imports = [ _1password-shell-plugins.hmModules.default ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -28,6 +30,13 @@
       export BAT_THEME="Sublime Snazzy"
     '';
   };
+
+  programs._1password-shell-plugins = {
+      enable = true;
+      # the specified packages as well as 1Password CLI will be
+      # automatically installed and configured to use shell plugins
+      plugins = with pkgs; [ gh ];
+    };
 
   programs.direnv = {
     enable = true;

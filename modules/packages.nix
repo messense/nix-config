@@ -79,7 +79,6 @@
       "uv"
     ];
     casks = [
-      "1password-cli"
       "lm-studio"
       "rio"
       "zed"
