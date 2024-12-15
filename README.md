@@ -4,7 +4,7 @@ Install [Determinate Nix](https://docs.determinate.systems/determinate-nix/):
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-  sh -s -- install
+  sh -s -- install --extra-conf "trusted-users = $(whoami)"
 ```
 
 Clone repository:
