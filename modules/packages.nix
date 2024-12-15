@@ -80,6 +80,7 @@
     casks = [
       "lm-studio"
       "rio"
+      "warp"
       "zed"
     ];
     masApps = {
