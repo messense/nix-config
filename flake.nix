@@ -60,5 +60,20 @@
           }
         ];
       };
+
+      darwinConfigurations."m4" = nix-darwin.lib.darwinSystem {
+        inherit specialArgs;
+        modules = [
+          ./hosts/m4
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${username} = import ./home;
+          }
+        ];
+      };
     };
 }
