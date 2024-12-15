@@ -32,11 +32,11 @@
   };
 
   programs._1password-shell-plugins = {
-      enable = true;
-      # the specified packages as well as 1Password CLI will be
-      # automatically installed and configured to use shell plugins
-      plugins = with pkgs; [ gh ];
-    };
+    enable = true;
+    # the specified packages as well as 1Password CLI will be
+    # automatically installed and configured to use shell plugins
+    plugins = with pkgs; [ gh ];
+  };
 
   programs.direnv = {
     enable = true;

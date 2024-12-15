@@ -46,34 +46,36 @@
         formatting = (treefmt-nix.lib.evalModule pkgs treefmtConfig).config.build.check self;
       });
 
-      darwinConfigurations."mac-mini" = nix-darwin.lib.darwinSystem {
-        inherit specialArgs;
-        modules = [
-          ./hosts/mac-mini
+      darwinConfigurations = {
+        mac-mini = nix-darwin.lib.darwinSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/mac-mini
 
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import ./home;
-          }
-        ];
-      };
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.${username} = import ./home;
+            }
+          ];
+        };
 
-      darwinConfigurations."m4" = nix-darwin.lib.darwinSystem {
-        inherit specialArgs;
-        modules = [
-          ./hosts/m4
+        m4 = nix-darwin.lib.darwinSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/m4
 
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import ./home;
-          }
-        ];
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.${username} = import ./home;
+            }
+          ];
+        };
       };
     };
 }
