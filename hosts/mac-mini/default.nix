@@ -3,6 +3,7 @@
   imports = [
     ../../modules/system.nix
     ../../modules/packages.nix
+    ../../modules/defaults.nix
   ];
 
   # The platform the configuration will be used on.
