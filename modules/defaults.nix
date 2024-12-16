@@ -23,4 +23,9 @@
     # Data lookup
     TrackpadThreeFingerTapGesture = 2;
   };
+
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
 }
