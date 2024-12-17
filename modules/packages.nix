@@ -19,6 +19,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.patchelf
     pkgs.pre-commit
+    pkgs.protobuf_29
     pkgs.ripgrep
     pkgs.rustup
     pkgs.starship
