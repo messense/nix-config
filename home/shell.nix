@@ -14,7 +14,10 @@
       ];
     };
     initExtra = ''
-      export PATH="$HOME/.local/bin:$HOME/.cargo/bin:/opt/homebrew/bin:$PATH"
+      export CARGO_HOME="$HOME/.cargo"
+      export RUSTUP_HOME="$HOME/.rustup"
+
+      export PATH="$HOME/.local/bin:$CARGO_HOME/bin:/opt/homebrew/bin:$PATH"
 
       # For Git GPG signing
       export GPG_TTY=$(tty)
