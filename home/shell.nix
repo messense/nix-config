@@ -17,7 +17,7 @@
       export CARGO_HOME="$HOME/.cargo"
       export RUSTUP_HOME="$HOME/.rustup"
 
-      export PATH="$HOME/.local/bin:$CARGO_HOME/bin:/opt/homebrew/bin:$PATH"
+      export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$PATH:/opt/homebrew/bin"
 
       # For Git GPG signing
       export GPG_TTY=$(tty)

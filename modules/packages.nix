@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.bat
     pkgs.btop
+    pkgs.cargo
     pkgs.cmake
     pkgs.codespell
     pkgs.delta
