@@ -88,6 +88,7 @@
     masApps = {
       "Apple Remote Desktop" = 409907375;
       "Apple Developer" = 640199958;
+      Dropover = 1355679052;
       Stash = 1596063349;
       TestFlight = 899247664;
       WeChat = 836500024;
