@@ -1,7 +1,7 @@
 { ... }:
 {
   system.defaults.dock = {
-   # Minimize windows into application icon
+    # Minimize windows into application icon
     minimize-to-application = true;
   };
 
