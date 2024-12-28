@@ -80,6 +80,7 @@
       "uv"
     ];
     casks = [
+      "ghostty"
       "lm-studio"
       "rio"
       "warp"
