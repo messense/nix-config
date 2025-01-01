@@ -61,6 +61,7 @@
     taps = [ "messense/macos-cross-toolchains" ];
     brews = [
       "aarch64-unknown-linux-gnu"
+      "aichat"
       "bindgen"
       "cargo-zigbuild"
       "cbindgen"
