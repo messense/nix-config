@@ -81,6 +81,7 @@
       "uv"
     ];
     casks = [
+      "displaylink"
       "ghostty"
       "lm-studio"
       "rio"
