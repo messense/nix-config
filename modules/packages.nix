@@ -18,6 +18,7 @@
     pkgs.mkalias
     pkgs.nil # Language server for Nix
     pkgs.nixfmt-rfc-style
+    pkgs.nodejs
     pkgs.patchelf
     pkgs.pre-commit
     pkgs.protobuf_29
