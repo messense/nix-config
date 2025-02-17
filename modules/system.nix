@@ -1,6 +1,5 @@
 { lib, pkgs, ... }:
 {
-  services.nix-daemon.enable = true;
   # Necessary for using flakes on macOS
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -8,7 +7,7 @@
 
   # Used for backwards compatibility. please read the changelog
   # before changing: `darwin-rebuild changelog`.
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
