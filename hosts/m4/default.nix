@@ -9,13 +9,15 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  nix.enable = false;
+
   # Declare the user that will be running `nix-darwin`.
   users.users.messense = {
     name = "${username}";
     home = "/Users/${username}";
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
