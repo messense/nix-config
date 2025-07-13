@@ -4,7 +4,6 @@
     pkgs.bat
     pkgs.btop
     pkgs.cargo
-    pkgs.claude-code
     pkgs.cmake
     pkgs.codespell
     pkgs.delta
