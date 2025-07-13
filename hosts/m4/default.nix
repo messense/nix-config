@@ -16,6 +16,7 @@
     name = "${username}";
     home = "/Users/${username}";
   };
+  system.primaryUser = "messense";
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
