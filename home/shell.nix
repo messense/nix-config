@@ -13,7 +13,7 @@
         "ohmyzsh/ohmyzsh path:lib"
       ];
     };
-    initExtra = ''
+    initContent = ''
       export CARGO_HOME="$HOME/.cargo"
       export RUSTUP_HOME="$HOME/.rustup"
 

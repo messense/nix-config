@@ -17,10 +17,9 @@
     enable = true;
     lfs.enable = true;
 
-    userName = username;
-    userEmail = useremail;
-
-    extraConfig = {
+    settings = {
+      user.name = username;
+      user.email = useremail;
       core.excludesFile = "~/.gitignore_global";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
@@ -31,12 +30,12 @@
       key = "1961A03283467E2B2FA2BD15BB41A8A2C716CCA9";
       signByDefault = true;
     };
+  };
 
-    delta = {
-      enable = true;
-      options = {
-        features = "side-by-side";
-      };
+  programs.delta = {
+    enable = true;
+    options = {
+      features = "side-by-side";
     };
   };
 }
