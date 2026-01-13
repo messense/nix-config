@@ -10,6 +10,7 @@
     pkgs.direnv
     pkgs.fpp
     pkgs.git-open
+    pkgs.gnupg
     pkgs.gti
     pkgs.helix
     pkgs.htop
@@ -17,7 +18,7 @@
     pkgs.jq
     pkgs.mkalias
     pkgs.nil # Language server for Nix
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
     pkgs.nodejs
     pkgs.patchelf
     pkgs.pre-commit
@@ -39,7 +40,7 @@
       env = pkgs.buildEnv {
         name = "system-applications";
         paths = config.environment.systemPackages;
-        pathsToLink = "/Applications";
+        pathsToLink = [ "/Applications" ];
       };
     in
     pkgs.lib.mkForce ''
